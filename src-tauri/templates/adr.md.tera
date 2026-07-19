@@ -1,0 +1,39 @@
+---
+id: "{{ spec_id }}"
+title: "{{ title }}"
+type: "adr"
+status: "{{ status | default(value=\"proposed\") }}"
+priority: "P3"
+tags: []
+depends_on: []
+author: "{{ author }}"
+created: "{{ date }}"
+updated: "{{ date }}"
+version: "0.1.0"
+---
+
+# {{ title }}
+
+## Status
+{{ status | default(value="proposed") }}
+
+## Context
+<!-- What is the issue that we're seeing that is motivating this decision or change? -->
+
+## Decision
+<!-- What is the change that we're proposing or have decided to implement? -->
+
+## Consequences
+<!-- What becomes easier or more difficult to do because of this change? -->
+
+### Positive
+- 
+
+### Negative
+- 
+
+### Neutral
+- 
+
+## References
+-

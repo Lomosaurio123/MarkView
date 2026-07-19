@@ -1,0 +1,30 @@
+---
+id: "{{ spec_id }}"
+title: "{{ title }}"
+type: "task"
+status: "{{ status | default(value=\"draft\") }}"
+priority: "P2"
+tags: []
+depends_on: []
+author: "{{ author }}"
+created: "{{ date }}"
+updated: "{{ date }}"
+version: "0.1.0"
+---
+
+# {{ title }}
+
+## Description
+<!-- What needs to be done -->
+
+## Subtasks
+- [ ] Subtask 1
+- [ ] Subtask 2
+
+## Definition of Done
+- [ ] Code complete
+- [ ] Tests passing
+- [ ] Documentation updated
+
+## References
+- [[DES-001]]

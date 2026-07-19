@@ -1,0 +1,263 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-background text-foreground m-0 min-h-screen;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  #root, #root > div {
+    height: 100%;
+  }
+  
+  .monaco-editor {
+    @apply bg-background;
+  }
+  
+  .monaco-editor .margin {
+    @apply bg-background;
+  }
+  
+  .monaco-editor .lines-content {
+    @apply bg-background;
+  }
+}
+
+@layer components {
+  .btn-icon {
+    @apply inline-flex h-8 w-8 items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground;
+  }
+  
+  .btn-icon-active {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+  
+  .btn-sm {
+    @apply inline-flex h-8 items-center justify-center rounded-md px-3 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+  
+  .input-field {
+    @apply flex h-8 w-full rounded-md border border-input bg-background px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  
+  .label-text {
+    @apply text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+  }
+  
+  .tree-item {
+    @apply flex items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-accent;
+  }
+  
+  .tree-item-selected {
+    @apply bg-accent text-accent-foreground;
+  }
+  
+  .tree-item-icon {
+    @apply flex-shrink-0 text-muted-foreground;
+  }
+  
+  .sidebar-header {
+    @apply flex items-center justify-between px-3 py-2 border-b border-border;
+  }
+  
+  .sidebar-search {
+    @apply p-2 border-b border-border;
+  }
+  
+  .sidebar-options {
+    @apply flex items-center gap-2 px-2 py-1 border-b border-border text-xs text-muted-foreground;
+  }
+  
+  .sidebar-footer {
+    @apply px-3 py-2 border-t border-border text-xs text-muted-foreground;
+  }
+  
+  .editor-toolbar {
+    @apply flex items-center justify-between px-3 py-2 border-b border-border bg-muted/50;
+  }
+  
+  .editor-statusbar {
+    @apply flex items-center justify-between px-3 py-1 border-t border-border bg-muted/30 text-xs text-muted-foreground;
+  }
+  
+  .preview-toolbar {
+    @apply flex items-center justify-between px-3 py-2 border-b border-border bg-muted/50;
+  }
+  
+  .status-bar {
+    @apply flex items-center justify-between px-3 py-1.5 bg-muted/50 border-t border-border text-xs text-muted-foreground;
+  }
+  
+  .markdown-preview {
+    @apply prose prose-sm dark:prose-invert max-w-none;
+  }
+  
+  .markdown-preview pre {
+    @apply bg-muted p-4 rounded-lg overflow-x-auto;
+  }
+  
+  .markdown-preview code {
+    @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+  
+  .markdown-preview pre code {
+    @apply bg-transparent p-0 text-sm;
+  }
+  
+  .markdown-preview blockquote {
+    @apply border-l-4 border-primary pl-4 italic text-muted-foreground;
+  }
+  
+  .markdown-preview table {
+    @apply w-full border-collapse;
+  }
+  
+  .markdown-preview th,
+  .markdown-preview td {
+    @apply border border-border px-3 py-2 text-left;
+  }
+  
+  .markdown-preview th {
+    @apply bg-muted font-semibold;
+  }
+  
+  .markdown-preview img {
+    @apply max-w-full h-auto rounded-lg;
+  }
+  
+  .markdown-preview hr {
+    @apply border-t border-border my-6;
+  }
+  
+  .markdown-preview h1,
+  .markdown-preview h2,
+  .markdown-preview h3,
+  .markdown-preview h4,
+  .markdown-preview h5,
+  .markdown-preview h6 {
+    @apply font-semibold tracking-tight;
+  }
+  
+  .markdown-preview a {
+    @apply text-primary underline underline-offset-2 hover:no-underline;
+  }
+  
+  .wiki-link {
+    @apply text-primary underline decoration-dotted underline-offset-2 hover:decoration-solid;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground)) transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground) / 0.5);
+  }
+  
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background;
+  }
+  
+  .transition-smooth {
+    @apply transition-all duration-200 ease-out;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-from-top {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-in-from-bottom {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+.animate-slide-in-from-top {
+  animation: slide-in-from-top 0.2s ease-out;
+}
+
+.animate-slide-in-from-bottom {
+  animation: slide-in-from-bottom 0.2s ease-out;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}

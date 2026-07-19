@@ -1,0 +1,28 @@
+---
+id: "{{ spec_id }}"
+title: "{{ title }}"
+type: "spec"
+status: "{{ status | default(value=\"draft\") }}"
+priority: "P2"
+tags: []
+depends_on: []
+author: "{{ author }}"
+created: "{{ date }}"
+updated: "{{ date }}"
+version: "0.1.0"
+---
+
+# {{ title }}
+
+## Context
+<!-- Why is this spec needed? -->
+
+## Requirements
+<!-- Clear, verifiable requirements -->
+
+## Acceptance Criteria
+- [ ] Criterion 1
+- [ ] Criterion 2
+
+## References
+- [[VIS-001]]

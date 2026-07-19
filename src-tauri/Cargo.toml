@@ -1,0 +1,37 @@
+[package]
+name = "markview"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tauri = { version = "2.0", features = [] }
+tauri-plugin-fs = "2.0"
+tauri-plugin-shell = "2.0"
+tauri-plugin-dialog = "2.0"
+tauri-plugin-notification = "2.0"
+tauri-plugin-clipboard-manager = "2.0"
+tauri-plugin-updater = "2.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+thiserror = "1.0"
+anyhow = "1.0"
+tantivy = "0.22"
+notify = "6.0"
+git2 = "0.18"
+tera = "1.18"
+jsonschema = "0.18"
+walkdir = "2.3"
+glob = "0.3"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.0", features = ["v4", "serde"] }
+regex = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+serde_yaml = "0.9"
+rand = "0.8"
+gray_matter = "0.3"
+
+[resolver]
+version = "2"
+
+[package.metadata]

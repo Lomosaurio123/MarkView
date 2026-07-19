@@ -1,0 +1,78 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MarkView",
+  "version": "0.1.0",
+  "identifier": "com.markview.app",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "MarkView",
+        "width": 1400,
+        "height": 900,
+        "minWidth": 1000,
+        "minHeight": 700,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' ipc: http://localhost:1420;"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": ["icons/icon.png"],
+    "externalBin": ["pandoc"],
+    "resources": ["schemas/*", "templates/*", "export-templates/*"]
+  },
+  "plugins": {
+    "fs": {
+      "all": true,
+      "scope": ["$APPDATA/MarkView/*", "$PROJECT/*"]
+    },
+    "shell": {
+      "all": false,
+      "open": true,
+      "sidecar": true
+    },
+    "dialog": {
+      "all": true
+    },
+    "notification": {
+      "all": true
+    },
+    "window": {
+      "all": false,
+      "close": true,
+      "hide": true,
+      "show": true,
+      "maximize": true,
+      "minimize": true,
+      "unmaximize": true,
+      "unminimize": true
+    },
+    "clipboard": {
+      "all": true
+    },
+    "path": {
+      "all": true
+    },
+    "app": {
+      "all": false,
+      "show": true,
+      "hide": true
+    },
+    "protocol": {
+      "all": true,
+      "asset": true,
+      "assetScope": ["$PROJECT/*"]
+    }
+  }
+}

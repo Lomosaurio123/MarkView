@@ -1,0 +1,36 @@
+---
+id: "{{ spec_id }}"
+title: "{{ title }}"
+type: "design"
+status: "{{ status | default(value=\"draft\") }}"
+priority: "P2"
+tags: []
+depends_on: []
+author: "{{ author }}"
+created: "{{ date }}"
+updated: "{{ date }}"
+version: "0.1.0"
+---
+
+# {{ title }}
+
+## Overview
+<!-- High-level design summary -->
+
+## Architecture
+<!-- System architecture, components, interfaces -->
+
+## Data Model
+<!-- Data structures, schemas -->
+
+## API Design
+<!-- Endpoints, contracts -->
+
+## Security Considerations
+<!-- Threat model, mitigations -->
+
+## Testing Strategy
+<!-- Unit, integration, e2e -->
+
+## References
+- [[REQ-001]]
