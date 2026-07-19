@@ -30,3 +30,12 @@ coverage/
 
 # Misc
 .eslintcache
+
+# Additional build artifacts
+node_modules/
+.vite/
+dist/
+src-tauri/target/
+target/
+/.cache
+.cache/
